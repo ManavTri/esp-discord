@@ -5,9 +5,9 @@
 extern "C" {
 #endif
 
-#include "helpers/estr.h"
+#include "estr.h"
 #include "discord.h"
-#include "discord/message.h"
+#include "message.h"
 
 #define DISCORD_OTA_DEFAULT_PREFIX "!ota"
 

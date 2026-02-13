@@ -2,11 +2,11 @@
 #define _DISCORD_MESSAGE_H_
 
 #include "discord.h"
-#include "discord/user.h"
-#include "discord/member.h"
-#include "discord/message_reaction.h"
-#include "discord/attachment.h"
-#include "discord/embed.h"
+#include "user.h"
+#include "member.h"
+#include "message_reaction.h"
+#include "attachment.h"
+#include "embed.h"
 
 #ifdef __cplusplus
 extern "C" {

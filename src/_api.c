@@ -1,5 +1,5 @@
-#include "discord/private/_discord.h"
-#include "discord/private/_api.h"
+#include "_discord.h"
+#include "_api.h"
 #include "cutils.h"
 #include "estr.h"
 
