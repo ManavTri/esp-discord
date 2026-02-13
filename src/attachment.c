@@ -1,4 +1,4 @@
-#include "discord/attachment.h"
+#include "attachment.h"
 #include "esp_heap_caps.h"
 #include "cutils.h"
 #include "estr.h"

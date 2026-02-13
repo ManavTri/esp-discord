@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 #include "discord.h"
-#include "discord/member.h"
+#include "member.h"
 
 typedef struct
 {

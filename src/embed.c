@@ -1,4 +1,4 @@
-#include "discord/embed.h"
+#include "embed.h"
 
 static void discord_embed_image_free(discord_embed_image_t *image)
 {

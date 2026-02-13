@@ -1,7 +1,7 @@
 #include <inttypes.h>
-#include "discord/private/_gateway.h"
-#include "discord/private/_json.h"
-#include "discord/message.h"
+#include "_gateway.h"
+#include "_json.h"
+#include "message.h"
 #include "esp_transport_ws.h"
 #include "cutils.h"
 #include "estr.h"

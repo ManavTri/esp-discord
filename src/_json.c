@@ -1,7 +1,7 @@
-#include "discord/private/_json.h"
+#include "_json.h"
 #include "esp_heap_caps.h"
 #include "esp_log.h"
-#include "discord/private/_discord.h"
+#include "_discord.h"
 #include "cutils.h"
 #include "estr.h"
 

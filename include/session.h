@@ -1,7 +1,7 @@
 #ifndef _DISCORD_SESSION_H_
 #define _DISCORD_SESSION_H_
 
-#include "discord/user.h"
+#include "user.h"
 
 #ifdef __cplusplus
 extern "C" {

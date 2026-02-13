@@ -1,16 +1,16 @@
 #include "esp_heap_caps.h"
 #include "cJSON.h"
 #include "esp_log.h"
-#include "discord/private/_discord.h"
-#include "discord/private/_models.h"
+#include "_discord.h"
+#include "_models.h"
 
-#include "discord/session.h"
-#include "discord/user.h"
-#include "discord/member.h"
-#include "discord/message.h"
-#include "discord/message_reaction.h"
-#include "discord/role.h"
-#include "discord/voice_state.h"
+#include "session.h"
+#include "user.h"
+#include "member.h"
+#include "message.h"
+#include "message_reaction.h"
+#include "role.h"
+#include "voice_state.h"
 
 DISCORD_LOG_DEFINE_BASE();
 

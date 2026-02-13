@@ -1,4 +1,4 @@
-#include "discord/voice_state.h"
+#include "voice_state.h"
 
 void discord_voice_state_free(discord_voice_state_t *voice_state)
 {

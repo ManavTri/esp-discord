@@ -1,5 +1,5 @@
-#include "discord/session.h"
-#include "discord/private/_discord.h"
+#include "session.h"
+#include "_discord.h"
 
 esp_err_t discord_session_get_current(discord_handle_t client, const discord_session_t **out_session)
 {

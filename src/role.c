@@ -1,7 +1,7 @@
-#include "discord/role.h"
-#include "discord/private/_discord.h"
-#include "discord/private/_api.h"
-#include "discord/private/_json.h"
+#include "role.h"
+#include "_discord.h"
+#include "_api.h"
+#include "_json.h"
 #include "estr.h"
 
 DISCORD_LOG_DEFINE_BASE();

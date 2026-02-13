@@ -1,4 +1,4 @@
-#include "discord/channel.h"
+#include "channel.h"
 #include "estr.h"
 
 discord_channel_t *discord_channel_get_from_array_by_name(

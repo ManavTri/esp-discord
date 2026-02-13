@@ -16,9 +16,9 @@ extern "C" {
 #include "esp_http_client.h"
 #include "_models.h"
 #include "discord.h"
-#include "discord/discord_ota.h"
+#include "discord_ota.h"
 
-#include "discord/session.h"
+#include "session.h"
 
 #ifndef CONFIG_IDF_TARGET
 #define CONFIG_IDF_TARGET "esp32"

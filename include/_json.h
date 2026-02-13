@@ -2,17 +2,17 @@
 #define _DISCORD_PRIVATE_JSON_H_
 
 #include "cJSON.h"
-#include "discord/private/_models.h"
-#include "discord/session.h"
-#include "discord/user.h"
-#include "discord/member.h"
-#include "discord/message.h"
-#include "discord/message_reaction.h"
-#include "discord/guild.h"
-#include "discord/channel.h"
-#include "discord/role.h"
-#include "discord/attachment.h"
-#include "discord/voice_state.h"
+#include "_models.h"
+#include "session.h"
+#include "user.h"
+#include "member.h"
+#include "message.h"
+#include "message_reaction.h"
+#include "guild.h"
+#include "channel.h"
+#include "role.h"
+#include "attachment.h"
+#include "voice_state.h"
 
 #ifdef __cplusplus
 extern "C" {

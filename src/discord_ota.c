@@ -1,8 +1,8 @@
 #include "esp_image_format.h"
 #include "esp_ota_ops.h"
-#include "discord/private/_discord.h"
+#include "_discord.h"
 #include "discord_ota.h"
-#include "discord/session.h"
+#include "session.h"
 #include "nvs_flash.h"
 
 DISCORD_LOG_DEFINE_BASE();
