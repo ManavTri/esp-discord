@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include "estr.h"
+#include "helpers/estr.h"
 #include "discord.h"
 #include "discord/message.h"
 

@@ -16,7 +16,7 @@ extern "C" {
 #include "esp_http_client.h"
 #include "_models.h"
 #include "discord.h"
-#include "discord_ota.h"
+#include "discord/discord_ota.h"
 
 #include "discord/session.h"
 

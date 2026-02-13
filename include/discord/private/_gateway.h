@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 #include "discord.h"
-#include "_discord.h"
+#include "discord/private/_discord.h"
 #include "_models.h"
 
 esp_err_t dcgw_init(discord_handle_t client);
