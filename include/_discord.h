@@ -16,7 +16,6 @@ extern "C" {
 #include "esp_http_client.h"
 #include "_models.h"
 #include "discord.h"
-#include "discord_ota.h"
 
 #include "session.h"
 
@@ -123,7 +122,6 @@ struct discord
     int gw_buffer_len;
     discord_gateway_close_reason_t close_reason;
     discord_close_code_t close_code;
-    discord_ota_handle_t ota;
 };
 
 #ifdef __cplusplus

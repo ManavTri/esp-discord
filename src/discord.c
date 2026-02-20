@@ -385,8 +385,6 @@ esp_err_t discord_destroy(discord_handle_t client)
         client->bits = NULL;
     }
 
-    discord_ota_destroy(client);
-
     dc_config_free(client->config);
     client->config = NULL;
     free(client);

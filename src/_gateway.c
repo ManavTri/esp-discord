@@ -138,7 +138,7 @@ static void dcgw_websocket_event_handler(void *handler_arg, esp_event_base_t bas
         data->payload_offset);
 
     switch (event_id) {
-        case WEBSOCKET_EVENT_BEFORE_CONNECT:
+        // case WEBSOCKET_EVENT_BEFORE_CONNECT:
         case WEBSOCKET_EVENT_CONNECTED:
             client->state = DISCORD_STATE_CONNECTING;
             break;
@@ -197,7 +197,38 @@ esp_err_t dcgw_init(discord_handle_t client)
     client->state = DISCORD_STATE_INIT;
 
 #ifndef CONFIG_ESP_TLS_SKIP_SERVER_CERT_VERIFY
-    extern const uint8_t gateway_crt[] asm("_binary_gateway_pem_start");
+static const char gateway_crt[] =
+"-----BEGIN CERTIFICATE-----\n"
+"MIIFazCCA1OgAwIBAgISA7uWdlxeqmoeZaZX6mE6xPDdMA0GCSqGSIb3DQEBCwUA\n"
+"MEoxCzAJBgNVBAYTAlVTMRMwEQYDVQQKEwpMZXQncyBFbmNyeXB0MR8wHQYDVQQD\n"
+"ExZJc1JHIFJvb3QgWDEgLSBDbGFzcyAzMB4XDTIxMDMyMzE4MjY1NVoXDTQxMDMy\n"
+"MzE4MjY1NVowSjELMAkGA1UEBhMCVVMxEzARBgNVBAoTCkxldCdzIEVuY3J5cHQx\n"
+"HzAdBgNVBAMTFklzUkcgUm9vdCBYMSAtIENsYXNzIDMwggIiMA0GCSqGSIb3DQEB\n"
+"AQUAA4ICDwAwggIKAoICAQCt6Z9erjRzCQXDpUe1koXSPo6e7i0rGUNShUMHbOWc\n"
+"VQwWi4KFOeFHrgb3R04QLbTjaC4p2O0MJdHj7FVGHvXZHzVvzJeY9q24apqYh6g0\n"
+"TFogyXv3gZH/B+eCwbn4T/6KrAEyy6AdZkGouVp21Hb+Jseb3CidRubc4QZAlPfC\n"
+"dS4iigIvuXvYDn8ApX2HFqRSbuuSSMzdg3NofM8JrIoVNewc19hXtOD87mpy4V/m\n"
+"Ml1WDVYj1WFJsbgx5caX5/C/PObbIVdQydb9h9NP7VDaRao7IhiHBpjz2uVH54by\n"
+"ato3trENcGukdxbYlR5c+3F4iAfDdc0AGJi/7luWGINuD/7++UZ5EONosFVJeFt3\n"
+"TJS3BM4tiTqcKoy0eZZ+j9RnBbTK1Z4VBPakiobP6KyHR+Y6z3n0JVpaz6RtWLpm\n"
+"HtkobaN6D+PfYZ7R6pujISiFDUFxIr05oig3NbS1Ry6j3TDIrS9KuX3sI5Yucs5I\n"
+"96D65gis6pZeRAEIJ5zsxFrqxbPjzvY4xXHzkwmo7aX6ixkmKuuNHYsYvwP82LPg\n"
+"Fp8ZUBKbjDg7sWXBJgp7wa9u0edPFsKnz03Wx/ju0RduCMsZ/HXXIQK5vCk1vZEB\n"
+"HTid3e8DqRL3OjaxAg/P6nxsVXni4eWh05rq6ArlTc95xJMu38xpv8uKUaX4nHCq\n"
+"UwIDAQABo0IwQDAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIBBjAdBgNV\n"
+"HQ4EFgQUWfFfLZy9Vn0kGugHgdGXN53BJ38wDQYJKoZIhvcNAQELBQADggIBABn2\n"
+"ymlk/wEYBLETymFcpnSUsctNk6heAQ7Ez+KQEiC5EvhczHxVn9Yx8RJWb1x1o1t4\n"
+"tG6HC8K3opgDdGztqKqRR3YKHyCuXapnwXCfJOLLmObAun1vDLteA94ppIqhzyap\n"
+"2vlA38nSxrdbidKdvUSsfx8bVsgcuyo6edSxnl2xe50Tzw9uQWGWpZJYG1ChcxrF\n"
+"P6Vt8iDSHPsuacF6nwLxgPLZld0df6OwLKhPNgm6kKiC9JIhbnoAVnX1nvUs61f7\n"
+"GkMumZ5qX6Ch12yvDqOiiMHDL/95B2S/bRMyCV2wAPOQgpdnH3UX0YPD6/COM24k\n"
+"tgNhnNyEJD7BqXc9E+u6KDAdAm8YGtS+wGGyRyvE4s46HoPazTA/gkGEXLMaLLfi\n"
+"yRvCNrI6VsgGAaHo9dZYkTfLZNVVRFlE0YyqS/fWznuaCG2lLBVmOAXoJ1i8LojY\n"
+"x8WcN6i/K3PaY5E9O+V1YQUAECEV4VpWw2X2gYdEx+kt1/3uzMdGII4XESyqCCpt\n"
+"TR1+t0NenE2no0RvrRZtGJPD7W82dManIeZDV4SSQSSHqzTeWY5AvzkdxlIo0NGO\n"
+"8Iky3Uczdlz7YT1Do1B4ezgmO6ijLJrVN6a8GN28AL/fOHnqd7qV3CyMfCVx/gv3\n"
+"SnVAk0nnBYnCTsRmR271GGBqBPdZiZsaAJ+lZeXq\n"
+"-----END CERTIFICATE-----\n";
 #endif
 
     esp_websocket_client_config_t ws_cfg = {
@@ -207,8 +238,7 @@ esp_err_t dcgw_init(discord_handle_t client)
         .cert_pem = (const char *)gateway_crt,
 #endif
         .task_stack = 5 * 1024,
-        .disable_auto_reconnect = true,
-        .network_timeout_ms = 5000,
+        .disable_auto_reconnect = true
     };
 
     if (!(client->ws = esp_websocket_client_init(&ws_cfg))) {
